@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,33 +11,44 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-
-  @Input() userData: any = {};
+  user: any = {};
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialogRef: MatDialogRef<UserProfileComponent>,
+    public dialog: MatDialog,
     public snackBar: MatSnackBar,
     public router: Router
   ) { }
 
   ngOnInit(): void {
+    this.getUser();
   }
 
-  // This is the function responsible for sending the form inputs to the backend
-  editUser(): void {
-    this.fetchApiData.editUser(this.userData).subscribe((result) => {
-      // Logic for a successful user registration goes here! (To be implemented)
-      this.dialogRef.close(); // This will close the modal on success!
-      console.log(result);
-      this.snackBar.open('Your profile has been updated!', 'OK', {
-        duration: 2000
-      });
-      localStorage.clear();
-      this.router.navigate(['welcome']);
-      this.snackBar.open('Please login with your new credentials', 'OK', {
-        duration: 2000
-      });
+  getUser(): void {
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.user = resp;
+      console.log(this.user);
+      return this.user;
+    })
+  }
+
+  openEditProfileDialog(): void {
+    this.dialog.open(EditProfileComponent, {
+      width: '280px'
     });
+  }
+
+  deleteProfile(): void {
+    if (confirm('Are you sure you want to delete your account?')) {
+      this.router.navigate(['welcome']).then(() => {
+        this.snackBar.open('You have successfully deleted your account!', 'OK', {
+          duration: 2000
+        });
+      })
+      this.fetchApiData.deleteUser().subscribe((result) => {
+        console.log(result);
+        localStorage.clear();
+      });
+    }
   }
 }

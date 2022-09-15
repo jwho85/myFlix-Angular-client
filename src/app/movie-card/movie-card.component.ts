@@ -89,5 +89,9 @@ export class MovieCardComponent {
       this.ngOnInit();
     });
   }
+
+  isFavoriteMovie(id: string): boolean {
+    return this.favoriteMovies.includes(id);
+  }
 }
 
