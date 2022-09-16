@@ -52,12 +52,12 @@ export class MovieCardComponent {
     });
   }
 
-  viewDirector(name: string, bio: string, birthday: string, death: string): void {
+  viewDirector(name: string, bio: string, birth: string, death: string): void {
     this.dialog.open(DirectorViewComponent, {
       data: {
         Name: name,
         Bio: bio,
-        Birthday: birthday,
+        Birth: birth,
         Death: death,
       },
       width: '280px'
