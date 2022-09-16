@@ -34,7 +34,7 @@ export class EditProfileComponent implements OnInit {
       });
       localStorage.clear();
       this.router.navigate(['welcome']);
-      this.snackBar.open('Please login with your new credentials', 'OK', {
+      this.snackBar.open('Please login with your new credentials.', 'OK', {
         duration: 2000
       });
     });
