@@ -36,13 +36,12 @@ $myFlix-Angular-client-theme: mat.define-light-theme((color: (primary: $myFlix-A
 html,
 body {
   height: 100%;
-  font-family: 'Inter', sans-serif !important;
-  font-family: 'Pacifico', cursive !important;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Inter', sans-serif !important;
+  font-family: 'Pacifico', cursive !important;
 }
 
 .mat-card-header-text {

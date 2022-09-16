@@ -16,11 +16,11 @@
             <button mat-button color="primary" (click)="viewSynopsis(movie.Title, movie.Description)">
                 Synopsis
             </button>
-            <button mat-button *ngIf="!isFavoriteMovie(movie._id)" (click)="addFavoriteMovie(movie._id)"
+            <button mat-button *ngIf="!isFavoriteMovie(movie._id)" (click)="addFavoriteMovie(movie._id, movie.Title)"
                 color="primary">
                 <mat-icon>favorite_border</mat-icon>
             </button>
-            <button mat-button *ngIf="isFavoriteMovie(movie._id)" (click)="deleteFavoriteMovie(movie._id)"
+            <button mat-button *ngIf="isFavoriteMovie(movie._id)" (click)="deleteFavoriteMovie(movie._id, movie.Title)"
                 color="primary">
                 <mat-icon>favorite</mat-icon>
             </button>

@@ -35,8 +35,8 @@ export class MovieCardComponent {
   }
 
   getFavoriteMovies(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-      this.favoriteMovies = resp;
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.favoriteMovies = resp.FavoriteMovies;
       console.log(this.favoriteMovies);
       return this.favoriteMovies;
     });
@@ -74,19 +74,27 @@ export class MovieCardComponent {
     });
   }
 
-  addFavoriteMovie(id: string): void {
+  addFavoriteMovie(id: string, title: string): void {
     console.log(id);
     this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
       console.log(result);
       this.ngOnInit();
+      console.log(title);
+      this.snackBar.open({ title } + 'has been added to your favorites', 'OK', {
+        duration: 2000
+      });
     });
   }
 
-  deleteFavoriteMovie(id: string): void {
+  deleteFavoriteMovie(id: string, title: string): void {
     console.log(id);
     this.fetchApiData.deleteFavoriteMovie(id).subscribe((result) => {
       console.log(result);
       this.ngOnInit();
+      console.log(title);
+      this.snackBar.open({ title } + 'has been removed from your favorites', 'OK', {
+        duration: 2000
+      });
     });
   }
 
