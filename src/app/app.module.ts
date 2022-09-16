@@ -28,6 +28,8 @@ import { SynopsisViewComponent } from './synopsis-view/synopsis-view.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
@@ -63,6 +65,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     MatIconModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

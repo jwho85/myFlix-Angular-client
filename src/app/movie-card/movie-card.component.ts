@@ -80,7 +80,7 @@ export class MovieCardComponent {
       console.log(result);
       this.ngOnInit();
       console.log(title);
-      this.snackBar.open({ title } + 'has been added to your favorites', 'OK', {
+      this.snackBar.open('"' + title + '"' + ' has been added to your favorites.', 'OK', {
         duration: 2000
       });
     });
@@ -92,7 +92,7 @@ export class MovieCardComponent {
       console.log(result);
       this.ngOnInit();
       console.log(title);
-      this.snackBar.open({ title } + 'has been removed from your favorites', 'OK', {
+      this.snackBar.open('"' + title + '"' + ' has been removed from your favorites.', 'OK', {
         duration: 2000
       });
     });
