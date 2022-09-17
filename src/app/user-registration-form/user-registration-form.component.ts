@@ -33,7 +33,7 @@ export class UserRegistrationFormComponent implements OnInit {
       // Logic for a successful user registration goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal on success!
       console.log(result);
-      this.snackBar.open('Thank you for registering!', 'OK', {
+      this.snackBar.open('Thank you for registering! Please login.', 'OK', {
         duration: 2000
       });
     }, (result) => {
