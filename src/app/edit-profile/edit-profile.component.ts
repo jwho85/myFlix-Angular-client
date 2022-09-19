@@ -23,11 +23,9 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // This is the function responsible for sending the form inputs to the backend
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
-      // Logic for a successful user registration goes here! (To be implemented)
-      this.dialogRef.close(); // This will close the modal on success!
+      this.dialogRef.close();
       console.log(result);
       this.snackBar.open('Your profile has been updated!', 'OK', {
         duration: 2000
