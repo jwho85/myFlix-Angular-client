@@ -29,6 +29,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     SynopsisViewComponent,
     UserProfileComponent,
     EditProfileComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
