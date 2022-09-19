@@ -24,6 +24,11 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * This function gets the user object and assigns it to the user variable
+   * @function getUser
+   * @returns the user object
+   */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -32,12 +37,20 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
+  /**
+   * This function opens the edit profile dialog box
+   * @function openEditProfileDialog
+   */
   openEditProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: '280px'
     });
   }
 
+  /**
+   * This function deletes the user's profile after confirming, routes to the welcome page, and clears local storage
+   * @function deleteProfile
+   */
   deleteProfile(): void {
     if (confirm('Are you sure you want to delete your account?')) {
       this.router.navigate(['welcome']).then(() => {

@@ -23,6 +23,11 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This function edits the user, clears the storage, and goes to the welcome page
+   * @function editUser
+   */
+
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
       this.dialogRef.close();
