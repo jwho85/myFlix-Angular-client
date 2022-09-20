@@ -1,5 +1,7 @@
 # MyFlixAngularClient
 
+The objective of this project was to build the client-side for an application called myFlix based on its existing server-side code (REST API and database), with supporting documentation. It was built using HTML, CSS, JavaScript, Angular, Angular Material, and Angular Router.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
 ## Development server
