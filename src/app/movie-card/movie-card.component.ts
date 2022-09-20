@@ -27,7 +27,7 @@ export class MovieCardComponent {
   }
 
   /**
-   * This function gets all moves and puts them into the movies array
+   * This function gets all movies and puts them into the movies array
    * @function getMovies
    * @returns the movies array
    */
